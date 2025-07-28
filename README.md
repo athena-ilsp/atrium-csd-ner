@@ -1,6 +1,4 @@
-# Atrium: Context Sheet Description Named Entity Recognition Application
-
-This application is a simple, lightweight API for recognizing Named Entities in Context Sheets free text descriptions. In archaeology, a context sheet is a standardized form used to record the details of individual archaeological contexts. 
+# Atrium: Named Entity Recognition for Descriptions in Archaeological Context Sheets 
 
 The application is built with FastAPI and is ready for containerization with Docker. The application leverages a NER model available at https://huggingface.co/pprokopidis/atrium-speech-based-ner/ and the Flair NLP framework https://github.com/flairNLP/flair. 
 
