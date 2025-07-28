@@ -2,12 +2,12 @@ from fastapi import FastAPI, APIRouter
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any
 from pathlib import Path
-import os
+import os, sys
+from os import environ
 import torch
 import re
-
+import traceback
 import dotenv
-dotenv.load_dotenv( Path.home() / ".env")
 
 torch.classes.__path__ = [os.path.join(torch.__path__[0], torch.classes.__file__)] 
 # or simply:
@@ -20,6 +20,13 @@ from logging import getLogger
 logger = getLogger()
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 
+if environ.get('HUGGING_FACE_HUB_TOKEN') is None :
+    try:
+        logger.info("Cannot find HUGGING_FACE_HUB_TOKEN in environment variables.")  
+        logger.info("Loading .env file from current directory.")
+        dotenv.load_dotenv(".env")
+    except FileNotFoundError as e:
+        traceback.print_exc()
 
 example_text = """Lower fill of posthole transitioning into fill 1036 gradually.
 There is a linear delimitation / demarcation from the block behind the back of the head to the left foot.
@@ -63,6 +70,7 @@ models = dict()
 for model_filename in model_filenames:
     if model_filename not in models:
         logger.info(f"Loading model {model_filename}")
+        print(os.environ)
         model_path = hf_hub_download(repo_id="pprokopidis/atrium-speech-based-ner", filename=model_filename)
         model = SequenceTagger.load(model_path)
         models[model_filename] = model 
@@ -94,7 +102,7 @@ def process_text(text: str):
     doc = [{
         "text": sentence.text,
         "ents": [
-            {"start": ent.start_position, "end": ent.end_position, "label": ent.labels[0].value}
+            {"start": ent.start_position, "end": ent.end_position, "label": ent.labels[0].value, "text": sentence.text[ent.start_position:ent.end_position]}
             for ent in sentence.get_spans('ner')
         ],
         "title": None,

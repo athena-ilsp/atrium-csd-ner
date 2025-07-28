@@ -1,0 +1,10 @@
+services:
+  app:
+    env_file: ".env"  
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: athena-ilsp/atrium-csd-ner-app:latest
+    ports:
+      - "8080:8080"
+  
