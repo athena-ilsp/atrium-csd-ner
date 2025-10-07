@@ -30,4 +30,4 @@ ENTRYPOINT []
 
 # Uses `--host 0.0.0.0` to allow access from outside the container
 # Run the application.
-CMD ["/app/.venv/bin/uvicorn", "main:app", "--port", "8080", "--host", "0.0.0.0"]
+CMD ["/app/.venv/bin/uvicorn", "main:app", "--port", "8000", "--host", "0.0.0.0"]

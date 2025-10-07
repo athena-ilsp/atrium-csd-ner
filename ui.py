@@ -23,7 +23,7 @@ import seaborn as sns
 import base64
 import matplotlib
 import matplotlib.pyplot as plt
-
+# Run the autorefresh every 5000 milliseconds (5 seconds)
 image_dir="images"
 
 logger = getLogger()
@@ -32,9 +32,30 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 NL="\n"
 TAB="\t"
 
+
+import socket
+
+def get_server_info():
+    """Retrieves the hostname and internal IP address."""
+    try:
+        hostname = socket.gethostname()
+        # Get the IP address associated with the hostname
+        # Note: This is often the internal/private IP, e.g., 192.168.x.x
+        ip_address = socket.gethostbyname(hostname)
+        return hostname, ip_address
+    except Exception as e:
+        return "Error getting hostname", str(e)
+
+hostname, ip_address = get_server_info()
+
+# st.header("Streamlit Server Information")
+# st.code(f"Server Hostname: {hostname}")
+# st.code(f"Internal IP Address: {ip_address}")
+
+
 def call_fastapi_ner(text):
     response = requests.post(
-        "http://10.1.1.76:8000/ner",
+        f"http://{hostname}:8000/ner",
         json={"text": text},
         timeout=60
     )
@@ -91,22 +112,23 @@ if st.button("Process text with NER"):
         try:
             with st.spinner("Processing text ..."):
                 doc = call_fastapi_ner(text)
-                color_palette = requests.get("http://10.1.1.76:8000/palette").json()
+                color_palette = requests.get(f"http://{hostname}:8000/palette").json()
                 st.subheader("Results:")
+
                 # Use displacy for visualization
                 ent_html = displacy.render(doc, manual=True, style="ent", jupyter=False, options={'colors': color_palette})
                 st.markdown(ent_html, unsafe_allow_html=True)
         except Exception as e:
             st.error(f"An error occurred: {e}")
     else:
-        st.warning("Please input some text.")
+        st.warning("Please inpu some text.")
 
 # "with" notation
 with st.sidebar:
     st.markdown(
-        """<div style="text-align: right;">
-        <a href="http://10.1.1.76:8000/docs/">
-        <img src="data:image/png;base64,{}" width="80">
+        f"""<div style="text-align: right;">
+        <a href="http://{hostname}:8000/docs/">""" +
+        """<img src="data:image/png;base64,{}" width="80">
         </a></div>""".format(
             base64.b64encode(open(f"{image_dir}/fastapi.png", "rb").read()).decode()
         ),
@@ -115,3 +137,6 @@ with st.sidebar:
 
 
 #displacy.render(dic_ents, manual=True, style="ent")
+
+
+#st.info(f"The Streamlit app is typically run on port 8501, so the internal URL is: http://{ip_address}:8501")

@@ -6,5 +6,5 @@ services:
       dockerfile: Dockerfile
     image: athena-ilsp/atrium-csd-ner-app:latest
     ports:
-      - "8080:8080"
+      - "8000:8000"
   
