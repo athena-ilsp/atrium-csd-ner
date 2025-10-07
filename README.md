@@ -48,13 +48,13 @@ docker-compose up --build
 ```
 
 ## Documentation
-FastAPI autogenerates an OpenAPI specification, which allows you to test this application directly from an interactive console in your browser. It uses the [Pydantic](https://docs.pydantic.dev/) model to validate user input (as shown in the models section of the specification, below). Go to [http://0.0.0.0:8080/docs](http://0.0.0.0:8080/docs) to use the automatic interactive API documentation for this application (provided by [Swagger UI](https://github.com/swagger-api/swagger-ui)) to send requests. 
+FastAPI autogenerates an OpenAPI specification, which allows you to test this application directly from an interactive console in your browser. It uses the [Pydantic](https://docs.pydantic.dev/) model to validate user input (as shown in the models section of the specification, below). Go to [http://localhost:8080/docs](http://localhost:8080/docs) to use the automatic interactive API documentation for this application (provided by [Swagger UI](https://github.com/swagger-api/swagger-ui)) to send requests. 
 
 ## Example call of the API
 
 ```bash
 curl -X 'POST' \
-  'http://10.1.1.76:8080/ner' \
+  'http://localhost:8080/ner' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
