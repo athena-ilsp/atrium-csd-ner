@@ -38,7 +38,7 @@ docker-compose build
 ```
 docker-compose up 
 ```
-At this point, the application should be running at [http://localhost:8000/](http://localhost:8000/). To stop the application, you can run:
+At this point, the application should be running at [http://localhost:8080/](http://localhost:8080/). To stop the application, you can run:
 ```
 docker-compose down
 ```
@@ -48,7 +48,7 @@ docker-compose up --build
 ```
 
 ## Documentation
-FastAPI autogenerates an OpenAPI specification, which allows you to test this application directly from an interactive console in your browser. It uses the [Pydantic](https://docs.pydantic.dev/) model to validate user input (as shown in the models section of the specification, below). Go to [http://0.0.0.0:8000/docs](http://0.0.0.0:8000/docs) to use the automatic interactive API documentation for this application (provided by [Swagger UI](https://github.com/swagger-api/swagger-ui)) to send requests. 
+FastAPI autogenerates an OpenAPI specification, which allows you to test this application directly from an interactive console in your browser. It uses the [Pydantic](https://docs.pydantic.dev/) model to validate user input (as shown in the models section of the specification, below). Go to [http://0.0.0.0:8080/docs](http://0.0.0.0:8080/docs) to use the automatic interactive API documentation for this application (provided by [Swagger UI](https://github.com/swagger-api/swagger-ui)) to send requests. 
 
 ## Example call of the API
 
