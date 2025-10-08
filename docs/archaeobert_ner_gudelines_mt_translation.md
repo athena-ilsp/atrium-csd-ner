@@ -1,4 +1,4 @@
-This document provides guidelines for annotating archaeological reports. The goal is to identify and tag "archeological concepts" (also called entities) within the text. These concepts include:
+This document provides guidelines for annotating archaeological reports based on Brandsen, A. (2024). The goal of the annotation is to identify and tag "archeological concepts" (also called entities) within the text. These concepts include:
 
 - ARTEFACT -> Artefacts: Objects found in the ground, ranging from small items like pollen to large ones like canoes. Includes building-related objects (e.g. "beams", "planks", "beams") and general concepts like "waste" and "pottery". However, do not annotate overly general categories such as "artefact",  "find material", "finds" "find complexes, or "archeobotanical material". When a descriptive adjective is present, include it (e.g., "burnt wattle and daub", "carbonized wood", "rough-walled sherd") unless the adjective refers to a material (e.g., "metal household goods"). Natural finds like "iron ore" and "index fossils" are also included. Examples: "Iron Age shards", "Rim of a smooth-walled jug", "Pottery concentrations".
 
@@ -19,4 +19,5 @@ This document provides guidelines for annotating archaeological reports. The goa
 * If "of" (or) is used to indicate multiple possibilities, annotate the possibilities separately: "eind van de 11e of begin van de 12e" (end of the 11th or beginning of the 12th).
 * Do not annotate quantity words, such as "enkele graven" (some graves), "een paar schrabbers" (a few scrapers).
 
-
+** References **
+ Brandsen, A. (2024) Archaeology specific BERT models for English, German, and Dutch. 
