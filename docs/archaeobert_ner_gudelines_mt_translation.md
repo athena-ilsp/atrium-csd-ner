@@ -16,6 +16,8 @@ This document provides guidelines for annotating archaeological reports based on
 
 - PERSON -> Deities or Mythical Entities: This category encompasses specific names of gods, goddesses, mythological figures, and legendary creatures. Do not annotate names of real humans, historical figures, or archaeologists.
 
+- FEATURE ->  Stylistic, typological and iconographic characteristics. This category includes: construction techniques, architectural or painting styles and artistic trends (e.g., "red-figure" vase), different types of decoration (floral decoration, inscribed decoration), types of artefacts, e.g., ("anthropomorphic" figurines, "falcon-shaped" figurine).
+
 **General Rules:**
 
 - Do not annotate articles (unless they are in the middle of an annotation). So, for example, "de bijl" (the axe) and "de 2e eeuw" (the 2nd century) (annotate only "bijl" and "2e eeuw") but "Eerste helft van de 19e eeuw" (First half of the 19th century).
