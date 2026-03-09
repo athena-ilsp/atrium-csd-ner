@@ -5,6 +5,7 @@
 data/
 
 docs/source
+docs/presentation
 
 # From https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore
 

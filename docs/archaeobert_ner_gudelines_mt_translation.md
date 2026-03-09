@@ -16,7 +16,7 @@ This document provides guidelines for annotating archaeological reports based on
 
 - PERSON -> Deities or Mythical Entities: This category encompasses specific names of gods, goddesses, mythological figures, and legendary creatures. Do not annotate names of real humans, historical figures, or archaeologists.
 
-- FEATURE ->  Stylistic, typological and iconographic characteristics. This category includes: construction techniques, architectural or painting styles and artistic trends (e.g., "red-figure" vase), different types of decoration (floral decoration, inscribed decoration), types of artefacts, e.g., ("anthropomorphic" figurines, "falcon-shaped" figurine).
+- FEATURE -> Stylistic, typological and iconographic characteristics. This category includes: construction techniques, architectural or painting styles and artistic trends (e.g., "red-figure" vase), different types of decoration (floral decoration, inscribed decoration), types of artefacts, e.g., ("anthropomorphic" figurines, "falcon-shaped" figurine).
 
 **General Rules:**
 
@@ -25,5 +25,6 @@ This document provides guidelines for annotating archaeological reports based on
 - If "of" (or) is used to indicate multiple possibilities, annotate the possibilities separately: "eind van de 11e of begin van de 12e" (end of the 11th or beginning of the 12th).
 - Do not annotate quantity words, such as "enkele graven" (some graves), "een paar schrabbers" (a few scrapers).
 
-Brandsen, A. (2024) Archaeology specific BERT models for English, German, and Dutch. See also the original guidelines available from https://github.com/alexbrandsen/Archaeo-NER-data-English-Dutch-German/blob/main/Dutch/Annotation%20Guidelines.pdf
+** References **
 
+- Brandsen, A. (2024) Archaeology specific BERT models for English, German, and Dutch. See also the original guidelines available from https://github.com/alexbrandsen/Archaeo-NER-data-English-Dutch-German/blob/main/Dutch/Annotation%20Guidelines.pdf

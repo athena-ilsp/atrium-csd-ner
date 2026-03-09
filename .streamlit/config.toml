@@ -1,0 +1,9 @@
+[server]
+# Tell Streamlit to expect the /atrium subpath
+baseUrlPath = "/atrium"
+
+# Disable checks that frequently break behind reverse proxies
+enableCORS = false
+enableXsrfProtection = false
+
+runOnSave = true

@@ -34,11 +34,15 @@ These steps show how to set up the application using Docker.
 docker-compose build
 ```
 
-2. Run the Docker containers.
+3. Run the Docker containers.
+```
+HOST_API_PORT=8005 HOST_UI_PORT=8506 docker-compose up 
+```
+Or simply use the defaults defined in `.env`:
 ```
 docker-compose up 
 ```
-At this point, the application should be running at [http://0.0.0.0:8000/](http://0.0.0.0:8000/). To stop the application, you can run:
+At this point, the API should be running at [http://localhost:8005/](http://localhost:8005/) and the UI at [http://localhost:8506/](http://localhost:8506/). To stop the application, you can run:
 ```
 docker-compose down
 ```
@@ -57,13 +61,15 @@ docker-compose logs -f -t
 ```
 
 ## Documentation
-FastAPI autogenerates an OpenAPI specification, which allows you to test this application directly from an interactive console in your browser. It uses the [Pydantic](https://docs.pydantic.dev/) model to validate user input (as shown in the models section of the specification, below). Go to [http://0.0.0.0:8000/docs](http://0.0.0.0:8000/docs) to use the automatic interactive API documentation for this application (provided by [Swagger UI](https://github.com/swagger-api/swagger-ui)) to send requests. 
+FastAPI autogenerates an OpenAPI specification, which allows you to test this application directly from an interactive console in your browser. It uses the [Pydantic](https://docs.pydantic.dev/) model to validate user input (as shown in the models section of the specification, below). Go to [http://localhost:8005/docs](http://localhost:8005/docs) to use the automatic interactive API documentation for this application (provided by [Swagger UI](https://github.com/swagger-api/swagger-ui)) to send requests. 
+
+The Streamlit UI is available at [http://localhost:8506/](http://localhost:8506/).
 
 ## Example call of the API
 
 ```bash
 curl -X 'POST' \
-  'http://0.0.0.0:8000/ner' \
+  'http://localhost:8005/ner' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
